@@ -38,5 +38,10 @@ git push origin dev-jesse
 ```
 
 #### Step 5: go to github and fix merge conflicts
+1. Compare pull reqeuest button
+
 
 #### Step 6: Once any conflicts are resolved merge to 'Dev' branch.
+1. Change 'Master' to 'Dev';  Compare 'Dev' to 'Dev-Myname'
+2. Merge pull request
+3. Confirm merge
