@@ -12,15 +12,36 @@ import {
   Switch,
   NavLink
 } from 'react-router-dom';
-//**banner route for testing only
+
+import { auth } from './utils/firebase';
+
 class App extends Component {
+  constructor(props) {
+  super(props);
+    this.state = {
+      currentUser: null,
+    };
+  }
+
+  componentWillMount() {
+    auth.onAuthStateChanged(newUser => {
+      if (newUser) {
+        console.log('logged in!', newUser);
+        this.setState({ currentUser: newUser });
+      } else {
+        console.log('logged out.');
+        this.setState({ currentUser: null });
+      }
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <Router>
           <div>
             <Switch>
-              <Route exact path="/" component={Splash} />
+              <Route exact path="/" component={Splash} currentUser={ this.state.currentUser } />
               <Route path="/homepage" component={HomePage} />
               <Route path="/banner" component={Header} />
             </Switch>
