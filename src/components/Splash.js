@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import logo_black from '../logo_black.png';
 
 
 
@@ -6,7 +7,7 @@ class Splash extends Component {
   render() {
     return (
       <div className="Splash">
-        <p> Hi </p>
+        <img src={logo_black} className="App-logo" alt="logo" />
       </div>
     );
   }
