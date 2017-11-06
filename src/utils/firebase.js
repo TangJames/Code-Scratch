@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+require('dotenv').config();
 
 // Provided by the Firebase console
 const config = {
@@ -8,8 +9,6 @@ const config = {
   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID
 };
-
-console.log('here is my firebase config', config);
 
 // Firebase instance
 firebase.initializeApp(config);
@@ -37,5 +36,5 @@ const firebaseListToArray = (firebaseObjectList) => {
 const database = firebase.database();
 const auth = firebase.auth();
 
-export { database, auth };
+export { firebase, database, auth };
 export { firebaseListToArray };

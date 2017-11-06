@@ -40,7 +40,7 @@ class App extends Component {
         <Router>
           <div>
             <Switch>
-              <Route path="/login" component={Splash} />
+              <Route exact path="/" component={Splash} currentUser={ this.state.currentUser } />
               <Route path="/homepage" component={HomePage} />
             </Switch>
           </div>
