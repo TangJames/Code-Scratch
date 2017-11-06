@@ -4,6 +4,7 @@ import Splash from './components/Splash.js';
 import HomePage from './components/HomePage.js';
 import Search from './components/Search.js';
 import CodeSnippet from './components/CodeSnippet.js';
+import Header from './components/Header.js';
 import {
   BrowserRouter as Router,
   Route,
@@ -11,7 +12,7 @@ import {
   Switch,
   NavLink
 } from 'react-router-dom';
-
+//**banner route for testing only
 class App extends Component {
   render() {
     return (
@@ -19,8 +20,9 @@ class App extends Component {
         <Router>
           <div>
             <Switch>
-              <Route path="/" component={Splash} />
+              <Route exact path="/" component={Splash} />
               <Route path="/homepage" component={HomePage} />
+              <Route path="/banner" component={Header} />
             </Switch>
           </div>
         </Router>
