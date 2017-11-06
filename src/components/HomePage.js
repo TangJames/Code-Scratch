@@ -7,8 +7,8 @@ class HomePage extends Component {
   render() {
     return (
       <div className="HomePage">
-        <Search />
-        <CodeSnippet />
+        <Search currentUser={ this.state.currentUser }  />
+        <Results currentUser={ this.state.currentUser } />
       </div>
     );
   }
