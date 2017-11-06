@@ -1,4 +1,4 @@
-# Github team update process 
+npm # Github team update process 
 
 ## OVERVIEW
 1. Master is locked
@@ -18,6 +18,13 @@ git checkout -b dev-jesse  (this makes the branch) skip to step 2
 
 
 #### Step 1: Get the latest working code from DEV to begin making changes
+FIRST, get your own tree clean with:
+```
+git add -A
+git commit -m "message about what youve changed here"
+```
+
+THEN, get the other's updates to work from 
 ```
 git pull origin dev
 ```
