@@ -26,13 +26,14 @@ class CodeSnippet extends Component {
         <div className="code-snippet">
           <h2> Hi2 </h2>
           <form>
-            <textarea rows="4" cols="50"></textarea>
-            <input
-              type="text"
-              placeholder="Code scratch"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
+            <textarea
+            rows="4"
+            cols="50"
+            placeholder="insert Code Scratch here"
+            value={this.state.value}
+            onChange={this.handleChange}
+            >
+            </textarea>
           </form>
         </div>
     );
