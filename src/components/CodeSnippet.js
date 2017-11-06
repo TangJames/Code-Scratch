@@ -1,7 +1,6 @@
 // This file goes into homePage.js
 import React, { Component } from 'react';
 
-
 class CodeSnippet extends Component {
   constructor(props) {
     super(props);
@@ -24,13 +23,17 @@ class CodeSnippet extends Component {
 
   render() {
     return (
-        <div className="CodeSnippet">
+        <div className="code-snippet">
           <h2> Hi2 </h2>
-              <input
-                type="text"
-                value={this.state.value}
-                onChange={this.handleChange}
-              />
+          <form>
+            <textarea rows="4" cols="50"></textarea>
+            <input
+              type="text"
+              placeholder="Code scratch"
+              value={this.state.value}
+              onChange={this.handleChange}
+            />
+          </form>
         </div>
     );
   }
