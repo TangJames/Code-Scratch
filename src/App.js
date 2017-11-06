@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+
 import Splash from './components/Splash.js';
 import HomePage from './components/HomePage.js';
 import Search from './components/Search.js';
