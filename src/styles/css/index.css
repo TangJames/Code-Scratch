@@ -5,11 +5,11 @@ Error: Invalid CSS after "  height": expected "{", was "}"
 
 10:   position: absolute;
 11: }
-12: 
+12:
 13: .cat-logo {
 14:   height
 15: }
-16: 
+16:
 17: .cat {
 18:   background:#EEEEEE;
 19:   height: 60px;
