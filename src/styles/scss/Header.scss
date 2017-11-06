@@ -1,0 +1,25 @@
+@import 'HtmlAndMarginFix';
+$bg-color: #2D1B2D;
+
+
+
+.banner {
+  background-color: $bg-color;
+  height: 200px;
+  width: 100%;
+  position: absolute;
+}
+
+.cat-logo {
+  height: 10px;
+}
+
+.cat {
+  background:#EEEEEE;
+  height: 60px;
+  top: auto;
+  bottom: 200px;
+  width: 60px;
+  z-index: 0;
+  -webkit-transition: all linear 1s;
+}
