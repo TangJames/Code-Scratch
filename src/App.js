@@ -19,7 +19,7 @@ class App extends Component {
         <Router>
           <div>
             <Switch>
-              <Route path="/" component={Splash} />
+              <Route path="/login" component={Splash} />
               <Route path="/homepage" component={HomePage} />
             </Switch>
           </div>
