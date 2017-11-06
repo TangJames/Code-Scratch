@@ -15,6 +15,12 @@ class Header extends Component {
           <span class="eyes right"></span>
           <span class="mouth"></span>
           </div>
+
+          <div class="moon">
+            <div class="sphere"></div>
+
+          </div>
+
         </div>
 
       </div>
