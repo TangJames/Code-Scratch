@@ -6,7 +6,7 @@ class CodeSnippet extends Component {
   constructor(props) {
     super(props);
 
-    this.state={
+    this.state = {
       value: ''
     };
 
@@ -15,13 +15,10 @@ class CodeSnippet extends Component {
   }
 
   getInitialState() {
-    this.setState({
-    return {value: 'Enter your code scratch here'};
-    });
+    return ({value: 'Enter your code scratch here'});
   }
 
   handleChange(event) {
-    event.preventDefault();
     this.setState({value: event.target.value});
   }
 
