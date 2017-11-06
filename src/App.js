@@ -1,18 +1,50 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import Splash from './components/Splash.js';
+import HomePage from './components/HomePage.js';
+import Search from './components/Search.js';
+import CodeSnippet from './components/CodeSnippet.js';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  NavLink
+} from 'react-router-dom';
+
+import { auth } from './utils/firebase';
 
 class App extends Component {
+  constructor(props) {
+  super(props);
+    this.state = {
+      currentUser: null,
+    };
+  }
+
+  componentWillMount() {
+    auth.onAuthStateChanged(newUser => {
+      if (newUser) {
+        console.log('logged in!', newUser);
+        this.setState({ currentUser: newUser });
+      } else {
+        console.log('logged out.');
+        this.setState({ currentUser: null });
+      }
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Router>
+          <div>
+            <Switch>
+              <Route exact path="/" component={Splash} currentUser={ this.state.currentUser } />
+              <Route path="/homepage" component={HomePage} />
+            </Switch>
+          </div>
+        </Router>
       </div>
     );
   }
