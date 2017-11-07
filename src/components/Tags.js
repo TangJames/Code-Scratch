@@ -7,7 +7,7 @@ class Tags extends Component {
     super(props);
 
     this.state = {
-      value: ''
+      tags: []
     };
 
     this.getInitialState = this.getInitialState.bind(this);
@@ -34,6 +34,7 @@ class Tags extends Component {
             rows="4"
             cols="50"
             placeholder="Tags"
+            setState={this.state.tags}
             >
             </textarea>
           </form>

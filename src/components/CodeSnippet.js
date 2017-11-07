@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import Tags from './Tags.js';
 
+
 class CodeSnippet extends Component {
   constructor(props) {
     super(props);
