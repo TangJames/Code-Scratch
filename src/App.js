@@ -23,13 +23,6 @@ class App extends Component {
     this.state = {
       currentUser: null,
     };
-    this.logoutUser = this.logoutUser.bind(this);
-  }
-
-  logoutUser(evt) {
-    console.log('hi from Jesse brain' + evt);
-    evt.preventDefault();
-    this.setState({ currentUser: null });
   }
 
   componentWillMount() {
@@ -54,7 +47,6 @@ class App extends Component {
       appActiveContent =
         <div>
           <HomePage currentUser={ this.state.currentUser } />
-          <a href="#" onClick={ this.logoutUser } >Logout</a>
         </div>
     } else {
       appActiveContent =
