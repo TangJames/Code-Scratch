@@ -74,6 +74,7 @@ class App extends Component {
             <Switch>
               <Route path="/homepage" component={HomePage} />
               <Route path="/banner" component={Header} />
+              <Route path="/CodeSnippet" component={CodeSnippet} />
             </Switch>
           </div>
         </Router>
