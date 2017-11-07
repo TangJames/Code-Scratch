@@ -59,9 +59,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <header>Code Scratch</header>
         {appActiveContent}
-        <h2>Hi i am a Footer</h2>
       </div>
     );
   }
