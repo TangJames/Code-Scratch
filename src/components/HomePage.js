@@ -18,13 +18,35 @@ import {
 class HomePage extends Component {
   constructor(props){
     super(props);
-
     this.state = {
       currentUser: this.props.currentUser,
+      activeComponent: 'search',
     }
+    this.handleNewSnippetClick = this.handleNewSnippetClick.bind(this);
   }
 
+  handleNewSnippetClick(evt) {
+    evt.preventDefault();
+    this.setState({ activeComponent: 'newSnippet' });
+  };
+
+
   render() {
+    let activeHomeContent;
+    if (this.state.activeComponent == 'search'){
+      activeHomeContent =
+        <div>
+          <Search currentUser={ this.state.currentUser } />
+          <Results currentUser={ this.state.currentUser } />
+          <button onClick={ this.handleNewSnippetClick } className="btn-snippet btn btn-primary">
+            {  'Add New Code Snippet' }
+          </button>
+        </div>
+    } else if (this.state.activeComponent == 'newSnippet' ){
+      activeHomeContent = <CodeSnippet currentUser={ this.state.currentUser } />
+    } else {
+      activeHomeContent = <h1> Unexplained error!!! (psst, it was aliens...)</h1>
+    }
     return (
       <div className="HomePage">
         <div>
@@ -32,23 +54,10 @@ class HomePage extends Component {
           <img className="navbar-profile-pic" src={this.props.currentUser.photoURL} alt="" />
           <LogoutButton />
         </div>
-        <Search currentUser={ this.state.currentUser }  />
-        <Results currentUser={ this.state.currentUser } />
-        <a href="/addNewSnippet"> Add new snippet </a>
-
-
-        <div>
-          <Router>
-            <div>
-              <Switch>
-                <Route path="/homepage" component={HomePage} />
-                <Route path="/addNewSnippet" component={CodeSnippet} />
-              </Switch>
-            </div>
-          </Router>
+        <div className="HomeContent">
+          {activeHomeContent}
         </div>
-     </div>
-
+      </div>
     );
   }
 }
