@@ -9,7 +9,9 @@ import {
   Route,
   Link,
   Switch,
-  NavLink
+  NavLink,
+  Redirect,
+  withRouter
 } from 'react-router-dom';
 
 import { auth } from './utils/firebase';
@@ -37,6 +39,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+
+        <Splash currentUser={ this.state.currentUser } />
+
         <Router>
           <div>
             <Switch>
