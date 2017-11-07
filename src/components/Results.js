@@ -6,7 +6,7 @@ class Results extends Component {
 
   this.state = {
     currentUser: this.props.currentUser,
-    searchResults: null,
+    searchResults: this.props.searchResults,
   }
 
   //TODO: CRUD FUNCTION TO GET ALL OF USERS RESULTS
@@ -16,12 +16,12 @@ class Results extends Component {
     return (
       <div className="resultsList">
         <h3>Mockup list of results</h3>
-        <ul>
+
           <li><a href="#">I am a result for the user. </a></li>
           <li><a href="#">I am a result for the user. </a></li>
           <li><a href="#">I am a result for the user. </a></li>
           <li><a href="#">I am a result for the user. </a></li>
-        </ul>
+
       </div>
     );
   }
