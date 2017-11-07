@@ -3,6 +3,15 @@ import Search from './Search.js';
 import Results from './Results.js';
 import CodeSnippet from './CodeSnippet.js';
 import LogoutButton from './LogoutButton.js';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  NavLink,
+  Redirect,
+  withRouter
+} from 'react-router-dom';
 
 
 //<Results currentUser={ this.state.currentUser } /> line: 12
@@ -25,7 +34,21 @@ class HomePage extends Component {
         </div>
         <Search currentUser={ this.state.currentUser }  />
         <Results currentUser={ this.state.currentUser } />
-      </div>
+        <a href="/addNewSnippet"> Add new snippet </a>
+
+
+        <div>
+          <Router>
+            <div>
+              <Switch>
+                <Route path="/homepage" component={HomePage} />
+                <Route path="/addNewSnippet" component={CodeSnippet} />
+              </Switch>
+            </div>
+          </Router>
+        </div>
+     </div>
+
     );
   }
 }

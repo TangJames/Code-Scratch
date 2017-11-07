@@ -65,19 +65,9 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>Hi I am your app</h1>
+        <h1>Hi I am a Header</h1>
         {appActiveContent}
-        <h2>Hi i am under your active content</h2>
-
-        <Router>
-          <div>
-            <Switch>
-              <Route path="/homepage" component={HomePage} />
-              <Route path="/banner" component={Header} />
-              <Route path="/CodeSnippet" component={CodeSnippet} />
-            </Switch>
-          </div>
-        </Router>
+        <h2>Hi i am a Footer</h2>
       </div>
     );
   }
