@@ -49,6 +49,7 @@ class App extends Component {
               <Route exact path="/" component={Splash} currentUser={ this.state.currentUser } />
               <Route path="/homepage" component={HomePage} />
               <Route path="/banner" component={Header} />
+              <Route path="/CodeSnippet" component={CodeSnippet} />
             </Switch>
           </div>
         </Router>

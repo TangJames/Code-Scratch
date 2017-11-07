@@ -21,13 +21,17 @@ class CodeSnippet extends Component {
     this.setState({value: event.target.value});
   }
 
+  handleClick(event) {
+
+  }
+
   render() {
     return (
         <div className="code-snippet">
           <h2> Hi2 </h2>
           <form>
             <textarea
-            rows="4"
+            rows="10"
             cols="50"
             placeholder="insert Code Scratch here"
             value={this.state.value}
@@ -35,6 +39,15 @@ class CodeSnippet extends Component {
             >
             </textarea>
           </form>
+          <form>
+            <textarea
+            rows="4"
+            cols="50"
+            placeholder="Tags"
+            >
+            </textarea>
+          </form>
+          <button onClick={this.handleClick()}>SAVE YOUR CODE SCRATCH</button>
         </div>
     );
   }
