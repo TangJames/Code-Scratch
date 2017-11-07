@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import logo_cat from '../logo_cat.png';
+import logo_black from '../logo_black.png';
 import LoginButton from './LoginButton.js';
 
 class Splash extends Component {
-
 
   getProfileInfo() {
     if (this.props.currentUser) {
@@ -15,7 +14,7 @@ class Splash extends Component {
         displayName = this.props.currentUser.email;
       }
       return (
-        <div className="login">
+        <div>
           <h1>{displayName}</h1>
           <img className="navbar-profile-pic" src={this.props.currentUser.photoURL} alt="" />
         </div>
@@ -26,21 +25,14 @@ class Splash extends Component {
     }
   }
 
-
   render() {
     // Here we pass relevant state to our child components
     // as props. Note that functions are passed using `bind` to
     // make sure we keep our scope to App
     return (
-
-      <div className="logo-header">
-        <header> Code Scratch </header>
-        <img src={logo_cat} className="App-logo" alt="logo" />
-        { this.getProfileInfo() }
-
       <div>
-        <LoginButton />
-
+        <img src={logo_black} className="App-logo" alt="logo" />
+        { this.getProfileInfo() }
       </div>
     )
   }

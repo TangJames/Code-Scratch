@@ -4,7 +4,6 @@ import { firebase, auth } from '../utils/firebase';
 class LoginButton extends Component {
   handleClick(evt) {
     evt.preventDefault();
-
     console.log('logging into GitHub with popup');
     const provider = new firebase.auth.GithubAuthProvider();
     // here is where I could ask for additional user info if needed
@@ -17,7 +16,7 @@ class LoginButton extends Component {
   render() {
     return (
       <button onClick={ this.handleClick } className="btn-login btn btn-primary">
-        { this.props.children || 'Log in' }
+        { this.props.children || 'Log in with Github Yo' }
       </button>
     )
   }
