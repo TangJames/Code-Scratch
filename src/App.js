@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import logo_cat from './logo_cat.png';
 import Splash from './components/Splash.js';
 import HomePage from './components/HomePage.js';
 import Search from './components/Search.js';
@@ -57,9 +58,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>Hi I am a Header</h1>
+        <Header />
         {appActiveContent}
-        <h2>Hi i am a Footer</h2>
       </div>
     );
   }
