@@ -1,13 +1,22 @@
-.App {
- }
-
- .banner img {
-   height: 60px;
-
+  .App {
+    text-align: center;
     }
-h1 {
-  display: inline;
-}
+
+  .login-button {
+    z-index: 0;
+  }
+
+  .banner img {
+    height: 100px;
+     }
+
+  h1 {
+    display: inline;
+    font-size: 45px;
+    color: ##757575;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: normal;
+  }
 
  .navbar-profile-pic {
   width: 200px;
@@ -29,14 +38,9 @@ html {
 }
 
 .banner {
-  background-color: #2D1B2D;
-  font-family: 'Roboto Mono', monospace;
-  height: 45px;
+  height: 61px;
   width: 100%;
-  font-size: 35px;
-  color: white;
-  display: inline;
-  float: left;
-  position: absolute; }
+  display: flex;
+   }
 
 /*# sourceMappingURL=index.css.map */
