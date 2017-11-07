@@ -11,7 +11,6 @@ class Splash extends Component {
       <div>
         <LoginButton />
       </div>
-      </div>
     )
   }
 }

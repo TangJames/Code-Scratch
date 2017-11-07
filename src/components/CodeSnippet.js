@@ -29,7 +29,6 @@ class CodeSnippet extends Component {
   render() {
     return (
         <div className="code-snippet">
-          <h2> Hi2 </h2>
           <form>
             <textarea
             rows="10"
