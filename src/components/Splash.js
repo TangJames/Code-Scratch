@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 import logo_black from '../logo_black.png';
 import LoginButton from './LoginButton.js';
 
-
-
-
-
-
 class Splash extends Component {
 
   getProfileInfo() {
@@ -30,8 +25,6 @@ class Splash extends Component {
     }
   }
 
-
-
   render() {
     // Here we pass relevant state to our child components
     // as props. Note that functions are passed using `bind` to
@@ -42,11 +35,7 @@ class Splash extends Component {
         { this.getProfileInfo() }
       </div>
     )
-
   }
-
 }
-
-
 
 export default Splash;

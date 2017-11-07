@@ -10,7 +10,9 @@ import {
   Route,
   Link,
   Switch,
-  NavLink
+  NavLink,
+  Redirect,
+  withRouter
 } from 'react-router-dom';
 
 import { auth } from './utils/firebase';
@@ -38,12 +40,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+
+        <Splash currentUser={ this.state.currentUser } />
+
         <Router>
           <div>
             <Switch>
               <Route exact path="/" component={Splash} currentUser={ this.state.currentUser } />
               <Route path="/homepage" component={HomePage} />
               <Route path="/banner" component={Header} />
+              <Route path="/CodeSnippet" component={CodeSnippet} />
             </Switch>
           </div>
         </Router>
