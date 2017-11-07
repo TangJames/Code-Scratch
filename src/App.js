@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Splash from './components/Splash2.js';
+import Splash from './components/Splash.js';
 import HomePage from './components/HomePage.js';
 import Search from './components/Search.js';
 import CodeSnippet from './components/CodeSnippet.js';
