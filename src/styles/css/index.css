@@ -1,5 +1,22 @@
 .App {
-  text-align: center; }
+  text-align: center;
+ }
+
+ .login {
+   font-family: 'Roboto Mono', monospace;
+   font-size: 9px;
+ }
+
+ .logo-header {
+   font-size: 45px;
+   background-color: black;
+   color: white;
+ }
+
+ .navbar-profile-pic {
+  width: 200px;
+  height: auto;
+ }
 
 body {
   padding: 0;
@@ -7,7 +24,8 @@ body {
 
 html {
   height: 100vh;
-  width: 100%; }
+  width: 100%;
+  background-color: grey;}
 
 .banner {
   background-color: #2D1B2D;

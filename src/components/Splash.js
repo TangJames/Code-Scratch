@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo_black from '../logo_black.png';
+import logo_cat from '../logo_cat.png';
 import LoginButton from './LoginButton.js';
 
 class Splash extends Component {
@@ -14,7 +14,7 @@ class Splash extends Component {
         displayName = this.props.currentUser.email;
       }
       return (
-        <div>
+        <div className="login">
           <h1>{displayName}</h1>
           <img className="navbar-profile-pic" src={this.props.currentUser.photoURL} alt="" />
         </div>
@@ -30,8 +30,9 @@ class Splash extends Component {
     // as props. Note that functions are passed using `bind` to
     // make sure we keep our scope to App
     return (
-      <div>
-        <img src={logo_black} className="App-logo" alt="logo" />
+      <div className="logo-header">
+        <header> Code Scratch </header>
+        <img src={logo_cat} className="App-logo" alt="logo" />
         { this.getProfileInfo() }
       </div>
     )
