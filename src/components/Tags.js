@@ -1,8 +1,8 @@
 // This file goes into homePage.js
 import React, { Component } from 'react';
-import Tags from './Tags.js';
+import CodeSnippet from './CodeSnippet.js';
 
-class CodeSnippet extends Component {
+class Tags extends Component {
   constructor(props) {
     super(props);
 
@@ -29,22 +29,17 @@ class CodeSnippet extends Component {
   render() {
     return (
         <div className="code-snippet">
-          <h2> Hi2 </h2>
           <form>
             <textarea
-            rows="10"
+            rows="4"
             cols="50"
-            placeholder="insert Code Scratch here"
-            value={this.state.value}
-            onChange={this.handleChange}
+            placeholder="Tags"
             >
             </textarea>
           </form>
-          <Tags />
-          <button onClick={this.handleClick()}>SAVE YOUR CODE SCRATCH</button>
         </div>
     );
   }
 }
 
-export default CodeSnippet;
+export default Tags;
