@@ -12,7 +12,9 @@ class CodeSnippet extends Component {
       codeSnippetTags: [],
       submitState: null,
     };
+
     this.handleSubmit = this.handleSubmit.bind(this);
+    this._handleSubmitRender = this._handleSubmitRender.bind(this);
   }
 
   componentWillMount() {
@@ -27,27 +29,36 @@ class CodeSnippet extends Component {
     evt.preventDefault();
 
     this.ref.push({
-        user: {
-          uid: this.props.currentUser.uid,
-          photo: this.props.currentUser.photoURL,
-          name: this.props.currentUser.displayName,
-        },
-        title: this.state.codeSnippetTitle,
-        snippet: this.state.codeSnippetText,
-        tags: [this.state.codeSnippetTags],
-        '.priority': 0 - Date.now(),
+      user: {
+        uid: this.props.currentUser.uid,
+        photo: this.props.currentUser.photoURL,
+        name: this.props.currentUser.displayName,
+      },
+      title: this.state.codeSnippetTitle,
+      snippet: this.state.codeSnippetText,
+      tags: [this.state.codeSnippetTags],
+      '.priority': 0 - Date.now(),
       })
       .then(() => {
-        console.log('added new quote', this.state.quote, this.state.author);
+        console.log('added new quote');
       })
       .catch(() => {
-        console.log('error adding new quote');
+        console.log('error adding new Snippet');
       });
 
+    this.setState({
+      submitState: 'submitted',
+    });
+
+  }
+
+  _handleSubmitRender = () => {
+    this.props.renderNewSubmit();
   }
 
 
   render() {
+    let _handleSubmitRender;
     return (
         <div className="code-snippet">
           <h2> Code Snippet </h2>
@@ -81,7 +92,9 @@ class CodeSnippet extends Component {
             </div>
 
             <div className="row">
-              <button>SAVE YOUR CODE SCRATCH</button>
+              <button
+                onPress={this._handleSubmitRender}
+                >SAVE YOUR CODE SCRATCH</button>
             </div>
 
           </form>

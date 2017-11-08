@@ -41,10 +41,8 @@ class App extends Component {
   render() {
     let appActiveContent;
     if (!this.state.currentUser){
-      console.log(this.state.currentUser);
       appActiveContent = <Splash currentUser={ this.state.currentUser } />
     } else if (this.state.currentUser){
-      console.log(this.state.currentUser);
       appActiveContent =
         <div>
           <HomePage currentUser={ this.state.currentUser } />
