@@ -66,6 +66,14 @@ class ViewCodeSnippet extends Component {
         <h1> Hi I am View Code Snippet </h1>
         <p>{ this.props.activeResult.title }</p>
 
+
+
+        <pre>
+          <code>
+            {this.props.activeResult.snippet}
+          </code>
+        </pre>
+
         </div>
         /*
          /// <div className="code-snippet">
