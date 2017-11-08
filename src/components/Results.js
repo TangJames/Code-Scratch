@@ -72,6 +72,7 @@ class Results extends Component {
       <section className="col-md-8 col-sm-12 results">
         <h4>Hi I am the start of results </h4>
 
+
         { this.state.results.map(result => (
           <Result
             key={ result.id }
@@ -79,6 +80,14 @@ class Results extends Component {
             getResultsFromResult={ this.getResultsFromResult }
             />
         )) }
+
+
+        { this.state.results.map(result => {
+          if (result.user.uid === this.state.currentUser.uid)
+          return  <Result key={ result.id } data={ result } />
+            return ''
+        }) }
+
 
         <h4> Hi I am the end of results</h4>
       </section>
