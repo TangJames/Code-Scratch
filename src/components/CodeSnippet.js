@@ -31,6 +31,10 @@ class CodeSnippet extends Component {
     this.ref.off();
   }
 
+  _handleSubmitRender = () => {
+    this.props.renderNewSubmit();
+  }
+
   handleSubmit(evt) {
     evt.preventDefault();
 
@@ -46,10 +50,12 @@ class CodeSnippet extends Component {
       '.priority': 0 - Date.now(),
       })
       .then(() => {
-        console.log('added new quote');
+        console.log('added new snippet');
+        document.getElementById=('form-add-snippet').reset();
       })
       .catch(() => {
         console.log('error adding new Snippet');
+        this._handleSubmitRender();
       });
 
     this.setState({
@@ -58,9 +64,6 @@ class CodeSnippet extends Component {
 
   }
 
-  _handleSubmitRender = () => {
-    this.props.renderNewSubmit();
-  }
 
 
 
@@ -74,7 +77,7 @@ class CodeSnippet extends Component {
     return (
         <div className="code-snippet">
           <h2> Code Snippet </h2>
-          <form onSubmit={ this.handleSubmit } className="form-add-snippet">
+          <form onSubmit={ this.handleSubmit } id="form-add-snippet" className="form-add-snippet">
 
             <div className="row">
               <input
@@ -104,9 +107,7 @@ class CodeSnippet extends Component {
             </div>
 
             <div className="row">
-              <button
-                onPress={this._handleSubmitRender}
-                >SAVE YOUR CODE SCRATCH</button>
+              <button>SAVE YOUR CODE SCRATCH</button>
             </div>
 
           </form>
