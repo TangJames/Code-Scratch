@@ -21,13 +21,13 @@ class Result extends Component {
   render() {
     console.log(this.props.data);
     let getResultsFromResult;
-    return <div>{this.props.data.title}
+    return <div className="row">
+             {this.props.data.title}
               <form onSubmit={ this.sendThisToResults } id="form-result-snippet" className="form-result-snippet">
-                    <div className="row">
-                      <button>View</button>
-                    </div>
+                <button>View</button>
               </form>
-    </div>;
+          </div>
+    ;
   }
 }
 
