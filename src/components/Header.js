@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo_cat from '../logo_cat.png';
 import '../styles/css/index.css';
 
 

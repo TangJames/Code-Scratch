@@ -17,12 +17,14 @@ $font-color: #FFF;
   font-family: 'Anonymous Pro', monospace;
   font-weight: 400;
   background: linear-gradient(#1C101C, $bg-banner 80%);
+  border-bottom: 3px solid #000;
 }
 
 h1 {
   margin: 0;
   padding: 0;
   padding-left: 15px;
+  letter-spacing: 5px;
 }
 
 .btn-login {
