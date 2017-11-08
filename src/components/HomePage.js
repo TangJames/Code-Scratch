@@ -13,8 +13,6 @@ import {
   withRouter
 } from 'react-router-dom';
 
-
-//<Results currentUser={ this.state.currentUser } /> line: 12
 class HomePage extends Component {
   constructor(props){
     super(props);
@@ -22,7 +20,16 @@ class HomePage extends Component {
       currentUser: this.props.currentUser,
       activeComponent: 'search',
     }
+
+    this.renderNewSubmit = this.renderNewSubmit.bind(this);
     this.handleNewSnippetClick = this.handleNewSnippetClick.bind(this);
+  }
+
+  renderNewSubmit() {
+    this.setState({
+      activeComponent: 'search',
+    });
+
   }
 
   handleNewSnippetClick(evt) {
@@ -43,7 +50,10 @@ class HomePage extends Component {
           </button>
         </div>
     } else if (this.state.activeComponent == 'newSnippet' ){
-      activeHomeContent = <CodeSnippet currentUser={ this.state.currentUser } />
+      activeHomeContent =
+      <CodeSnippet
+        currentUser={ this.state.currentUser }
+        renderNewSubmit={this.renderNewSubmit} />
     } else {
       activeHomeContent = <h1> Unexplained error!!! (psst, it was aliens...)</h1>
     }
