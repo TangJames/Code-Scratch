@@ -20,6 +20,11 @@ class CodeSnippet extends Component {
     this.ref = database.ref('/snippets');
   }
 
+  componentDidMount() {
+    //can we recognize keyboard events happening?
+    //
+  }
+
   componentWillUnmount() {
     this.ref.off();
   }
@@ -48,7 +53,10 @@ class CodeSnippet extends Component {
   }
 
 
+
+
   render() {
+
     return (
         <div className="code-snippet">
           <h2> Code Snippet </h2>
