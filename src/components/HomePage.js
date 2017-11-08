@@ -3,6 +3,7 @@ import Search from './Search.js';
 import Results from './Results.js';
 import CodeSnippet from './CodeSnippet.js';
 import LogoutButton from './LogoutButton.js';
+import ViewCodeSnippet from './ViewCodeSnippet.js';
 import {
   BrowserRouter as Router,
   Route,
@@ -19,6 +20,7 @@ class HomePage extends Component {
     this.state = {
       currentUser: this.props.currentUser,
       activeComponent: 'search',
+      currentSnippet: null,
     }
 
     this.renderNewSubmit = this.renderNewSubmit.bind(this);
@@ -28,6 +30,13 @@ class HomePage extends Component {
   renderNewSubmit() {
     this.setState({
       activeComponent: 'search',
+    });
+
+  }
+
+  renderViewThis() {
+    this.setState({
+      activeComponent: 'viewThis',
     });
 
   }
@@ -44,7 +53,9 @@ class HomePage extends Component {
       activeHomeContent =
         <div>
           <Search currentUser={ this.state.currentUser } />
-          <Results currentUser={ this.state.currentUser } />
+          <Results
+            currentUser={ this.state.currentUser }
+            renderViewThis={ this.renderViewThis } />
           <button onClick={ this.handleNewSnippetClick } className="btn-snippet btn btn-primary">
             {  'Add New Code Snippet' }
           </button>
@@ -54,7 +65,18 @@ class HomePage extends Component {
       <CodeSnippet
         currentUser={ this.state.currentUser }
         renderNewSubmit={this.renderNewSubmit} />
-    } else {
+
+    }  else if (this.state.activeComponent == 'viewThis' ){
+      activeHomeContent =
+      <ViewCodeSnippet
+        currentUser={ this.state.currentUser }
+        currentSnippet={ this.state.currentSnippet }
+        renderNewSubmit={ this.renderNewSubmit } />
+    }
+
+
+
+     else {
       activeHomeContent = <h1> Unexplained error!!! (psst, it was aliens...)</h1>
     }
     return (

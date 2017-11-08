@@ -26,14 +26,23 @@ class Results extends Component {
       const resultsList = firebaseListToArray(data.val());
 
       //loop through results list
-      //make a new object that is all resultList[this].user.uid === currentUser.uid
+      //make a new object that is all resultList[this].user.uid === this.state.currentUser.uid
       //set state to that userResultList
 
 
-      let userResults; //TODO: James to filter down to User Results only
+      // const userResults =
+      //     var output = [];
+      //     for(var i = 0; i < items.length; i++){
+      //       if (items.user.id === this.state.currentUser.uid){
+      //        output.push(<li>{items[i]}</li>);
+      //       }
+      //     }
+      //     return output;
+      //   }
+      // });
 
       this.setState({
-        results: resultsList,
+        results: userId,
       });
     });
   }
@@ -49,11 +58,9 @@ class Results extends Component {
         <h4>Hi I am the start of results </h4>
 
 
-        { this.state.results.map(result => {
-          if (result.user.uid === this.state.currentUser.uid)
-          return  <Result key={ result.id } data={ result } />
-            return ''
-        }) }
+        { this.state.results.map(result => (
+          if (result.user.uid === this.state.currentUser.uid) <Result key={ result.id } data={ result } />
+        )) }
 
         <h4> Hi I am the end of results</h4>
       </section>
