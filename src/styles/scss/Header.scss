@@ -27,11 +27,29 @@ h1 {
   letter-spacing: 5px;
 }
 
+.navbar-profile-pic {
+  position: absolute;
+  top: 4.8%;
+  right: 17%;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+}
+
+.username {
+  font-family: 'Open Sans', sans-serif;
+  position: absolute;
+  top: 1%;
+  right: 5%;
+  color: #fff;
+  font-size: .8em;
+}
+
 .btn-login {
   font-family: 'Open Sans', sans-serif;
   position: absolute;
-  top: 35px;
-  right: 30px;
+  top: 6%;
+  right: 5%;
   background-color: $bg-banner;
   color: $font-color;
   padding: 10px;
@@ -40,5 +58,21 @@ h1 {
 }
 
 .btn-login:hover {
+  background-color: #4C2D4C;
+}
+
+.btn-logout {
+  font-family: 'Open Sans', sans-serif;
+  position: absolute;
+  top: 6%;
+  right: 5%;
+  background-color: $bg-banner;
+  color: $font-color;
+  padding: 10px;
+  border: 1px solid #131219;
+  box-shadow: inset 0px -1px 3px 0px rgba(100,83,107,0.73);
+}
+
+.btn-logout:hover {
   background-color: #4C2D4C;
 }

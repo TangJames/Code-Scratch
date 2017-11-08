@@ -3,18 +3,19 @@
 // }
 
 body {
-  text-shadow: 1px 2px 3px rgba(0, 0, 0, .8);
+  text-shadow: 1px 2px 1px rgba(0, 0, 0, 1);
 }
 
 .wrapper {
   background-color: #131219;
+  
   width: auto;
   top:  103px;
   bottom: 0;
   left: 0;
   right: 0;
   position: absolute;
-  
+
 }
 
 
@@ -74,7 +75,7 @@ body {
 
 .wrapper:hover .cat{
 
-  top: 20%;
+  top: 24%;
 }
 
 .moon {
