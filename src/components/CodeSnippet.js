@@ -58,8 +58,6 @@ class CodeSnippet extends Component {
 
   }
 
-
-
   render() {
     let _handleSubmitRender;
     return (

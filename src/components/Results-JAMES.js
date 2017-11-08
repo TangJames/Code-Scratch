@@ -41,11 +41,12 @@ class Results extends Component {
              output.push(<li>{items[i]}</li>);
             }
           }
+          return output;
         }
       });
 
       this.setState({
-        results: resultsList,
+        results: userResults,
       });
     });
   }
