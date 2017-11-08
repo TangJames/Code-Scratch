@@ -30,6 +30,25 @@ class Results extends Component {
       //set state to that userResultList
 
 
+
+      const userResults = React.createClass({
+        render: function(){
+          return<ul>{this.createItems(this.props.items)}</ul>;
+        },
+        createItems: function(items){
+          var output = [];
+          for(var i = 0; i < items.length; i++){
+            if (items.user.id === this.state.currentUser.uid){
+             output.push(<li>{items[i]}</li>);
+            }
+          }
+          return output;
+        }
+      });
+
+      this.setState({
+        results: userResults,
+
       // const userResults =
       //     var output = [];
       //     for(var i = 0; i < items.length; i++){
@@ -43,6 +62,7 @@ class Results extends Component {
 
       this.setState({
         results: userId,
+
       });
     });
   }

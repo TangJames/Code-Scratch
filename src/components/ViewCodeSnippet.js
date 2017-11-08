@@ -7,10 +7,7 @@ class ViewCodeSnippet extends Component {
     super(props);
 
     this.state = {
-      codeSnippetTitle: this.props.data.title,
-      codeSnippetText: this.props.CodeSnippetTex,
-      codeSnippetTags: [],
-      viewState: 'view',
+      codeSnippetTitle: this.props.activeResult.title,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -64,11 +61,12 @@ class ViewCodeSnippet extends Component {
     let _handleSubmitRender;
     return (
 
-
+        <div>
 
         <h1> Hi I am View Code Snippet </h1>
+        <p>{ this.props.activeResult.title }</p>
 
-
+        </div>
         /*
          /// <div className="code-snippet">
         //   <h2> Code Snippet </h2>
