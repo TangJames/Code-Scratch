@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { firebase, auth } from '../utils/firebase';
+import '../styles/css/index.css';
 
 class LoginButton extends Component {
   handleClick(evt) {
@@ -16,7 +17,7 @@ class LoginButton extends Component {
   render() {
     return (
       <button onClick={ this.handleClick } className="btn-login btn btn-primary">
-        { this.props.children || 'Log in with Github Yo' }
+        { this.props.children || 'Log in with Github Yo!' }
       </button>
     )
   }

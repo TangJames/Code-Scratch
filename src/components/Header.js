@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import logo_cat from '../logo_cat.png';
+import '../styles/css/index.css';
+
 
 
 // <div className="logo">
@@ -10,9 +11,8 @@ class Header extends Component {
   render() {
     return (
       <div className="banner">
-            <img src={logo_cat} alt={'logo'}/>
-            <h1>Code Scratch</h1>
-          </div>
+            <h1>{'<CodeScratch />'}</h1>
+      </div>
 
     );
   }

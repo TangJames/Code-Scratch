@@ -6,6 +6,7 @@ import HomePage from './components/HomePage.js';
 import Search from './components/Search.js';
 import CodeSnippet from './components/CodeSnippet.js';
 import Header from './components/Header.js';
+import Footer from './components/Footer.js';
 import {
   BrowserRouter as Router,
   Route,
@@ -58,6 +59,7 @@ class App extends Component {
       <div className="App">
         <Header />
         {appActiveContent}
+        <Footer />
       </div>
     );
   }
