@@ -1,25 +1,44 @@
 @import 'HtmlAndMarginFix';
-$bg-color: #2D1B2D;
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro|Open+Sans:300,400,600');
+$bg-banner: #2D1B2D;
+$font-color: #FFF;
 
-
+// * {
+//   border: 1px solid red;
+// }
 
 .banner {
-  background-color: $bg-color;
-  height: 200px;
-  width: 100%;
+  background-color: $bg-banner;
+  color: $font-color;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100px;
+  font-family: 'Anonymous Pro', monospace;
+  font-weight: 400;
+  background: linear-gradient(#1C101C, $bg-banner 80%);
+  border-bottom: 3px solid #000;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  padding-left: 15px;
+  letter-spacing: 5px;
+}
+
+.btn-login {
+  font-family: 'Open Sans', sans-serif;
   position: absolute;
+  top: 35px;
+  right: 30px;
+  background-color: $bg-banner;
+  color: $font-color;
+  padding: 10px;
+  border: 1px solid #131219;
+  box-shadow: inset 0px -1px 3px 0px rgba(100,83,107,0.73);
 }
 
-.cat-logo {
-  height: 10px;
-}
-
-.cat {
-  background:#EEEEEE;
-  height: 60px;
-  top: auto;
-  bottom: 200px;
-  width: 60px;
-  z-index: 0;
-  -webkit-transition: all linear 1s;
+.btn-login:hover {
+  background-color: #4C2D4C;
 }
