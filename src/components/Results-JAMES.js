@@ -26,11 +26,23 @@ class Results extends Component {
       const resultsList = firebaseListToArray(data.val());
 
       //loop through results list
-      //make a new object that is all resultList[this].user.uid === currentUser.uid
+      //make a new object that is all resultList[this].user.uid === this.state.currentUser.uid
       //set state to that userResultList
 
 
-      let userResults; //TODO: James to filter down to User Results only
+      const userResults = React.createClass({
+        render: function(){
+          return<ul>{this.createItems(this.props.items)}</ul>;
+        },
+        createItems: function(items){
+          var output = [];
+          for(var i = 0; i < items.length; i++){
+            if (items.user.id === this.state.currentUser.uid){
+             output.push(<li>{items[i]}</li>);
+            }
+          }
+        }
+      });
 
       this.setState({
         results: resultsList,
