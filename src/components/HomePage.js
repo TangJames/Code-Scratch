@@ -34,7 +34,7 @@ class HomePage extends Component {
 
   handleNewSnippetClick(evt) {
     evt.preventDefault();
-    this.setState({ activeComponent: 'newSnippet' });
+    this.setState({ activeComponent: 'newSinippet' });
   };
 
 
