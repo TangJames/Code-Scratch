@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo_cat from '../logo_cat.png';
 import LoginButton from './LoginButton.js';
+import '../styles/css/index.css';
 
 class Splash extends Component {
   render() {

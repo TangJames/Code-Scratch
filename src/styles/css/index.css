@@ -1,28 +1,6 @@
-  .App {
-    text-align: center;
-    }
-
-  .login-button {
-    z-index: 0;
-  }
-
-  .banner img {
-    height: 100px;
-     }
-
-  h1 {
-    display: inline;
-    font-size: 45px;
-    color: ##757575;
-    font-family: 'Roboto Mono', monospace;
-    font-weight: normal;
-  }
-
- .navbar-profile-pic {
-  width: 200px;
-  height: auto;
-  margin-top: 162px;
- }
+@import url("https://fonts.googleapis.com/css?family=Anonymous+Pro|Open+Sans:300,400,600");
+.App {
+  text-align: center; }
 
 body {
   padding: 0;
@@ -30,82 +8,36 @@ body {
 
 html {
   height: 100vh;
-  width: 100%;
-  background-image: url(https://i.redd.it/ygzg317syilx.png);
-  background-size:     cover;
-  background-repeat:   no-repeat;
-  background-position: center center;
-}
+  width: 100%; }
 
 .banner {
-  height: 61px;
-  width: 100%;
+  background-color: #2D1B2D;
+  color: #FFF;
   display: flex;
-   }
+  justify-content: flex-start;
+  align-items: center;
+  height: 100px;
+  font-family: 'Anonymous Pro', monospace;
+  font-weight: 400;
+  background: linear-gradient(#1C101C, #2D1B2D 80%); }
 
-.cat:before, .cat:after {
-  width: 0;
-  height: 0;
-  top: -10px;
+h1 {
+  margin: 0;
+  padding: 0;
+  padding-left: 15px; }
+
+.btn-login {
+  font-family: 'Open Sans', sans-serif;
   position: absolute;
-  content: ""; }
+  top: 35px;
+  right: 30px;
+  background-color: #2D1B2D;
+  color: #FFF;
+  padding: 10px;
+  border: 1px solid #131219;
+  box-shadow: inset 0px -1px 3px 0px rgba(100, 83, 107, 0.73); }
 
-.cat:before {
-  border-left: 0px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 15px solid #EEE;
-  left: 0; }
-
-.cat:after {
-  border-right: 0px solid transparent;
-  border-left: 15px solid transparent;
-  border-bottom: 15px solid #EEE;
-  right: 0; }
-
-.cat .eyes {
-  position: absolute;
-  height: 8px;
-  width: 8px;
-  background: #333;
-  border-radius: 100%;
-  top: 15px; }
-
-.cat .eyes.left {
-  left: 12px; }
-
-.cat .eyes.right {
-  right: 12px; }
-
-.cat .mouth {
-  position: absolute;
-  height: 4px;
-  width: 60%;
-  background: #333;
-  border-radius: 0 0 30% 30%;
-  top: 28px;
-  margin: auto;
-  left: 0;
-  right: 0; }
-
-.moon {
-  position: relative;
-  top: 5px;
-  left: 70px;
-  height: 120px;
-  width: 120px;
-  background: #666666;
-  border-radius: 60px;
-  box-shadow: 0 0 60px 1px #444444; }
-
-.moon:before {
-  border-radius: 60px;
-  box-shadow: 10px -50px 0 0 #444, 50px 0 0 0 #444, 50px -37px 0 10px #444;
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  left: 30px;
-  bottom: 10px;
-  background: #444; }
+.btn-login:hover {
+  background-color: #4C2D4C; }
 
 /*# sourceMappingURL=index.css.map */
