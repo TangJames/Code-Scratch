@@ -3,9 +3,6 @@ import '../styles/css/index.css';
 
 
 
-// <div className="logo">
-//   <h1>{"<CodeScratch />"}</h1>
-// </div>
 
 class Footer extends Component {
   render() {
