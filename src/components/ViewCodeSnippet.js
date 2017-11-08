@@ -10,7 +10,7 @@ class ViewCodeSnippet extends Component {
       codeSnippetTitle: this.props.activeResult.title,
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClose = this.handleClose.bind(this);
     this._handleSubmitRender = this._handleSubmitRender.bind(this);
   }
 
@@ -26,94 +26,36 @@ class ViewCodeSnippet extends Component {
     this.props.renderNewSubmit();
   }
 
-  handleSubmit(evt) {
+  handleClose(evt) {
     evt.preventDefault();
+    console.log('Closing Snippet requeste.');
+    this._handleSubmitRender();
+  };
 
-    this.ref.push({
-      user: {
-        uid: this.props.currentUser.uid,
-        photo: this.props.currentUser.photoURL,
-        name: this.props.currentUser.displayName,
-      },
-      title: this.state.codeSnippetTitle,
-      snippet: this.state.codeSnippetText,
-      tags: [this.state.codeSnippetTags],
-      '.priority': 0 - Date.now(),
-      })
-      .then(() => {
-        console.log('added new snippet');
-        document.getElementById=('form-add-snippet').reset();
-      })
-      .catch(() => {
-        console.log('error adding new Snippet');
-        this._handleSubmitRender();
-      });
 
-    this.setState({
-      submitState: 'submitted',
-    });
-
-  }
 
 
 
   render() {
     let _handleSubmitRender;
     return (
-
+      <div>
         <div>
-
-        <h1> Hi I am View Code Snippet </h1>
-        <p>{ this.props.activeResult.title }</p>
-
-
-
-        <pre>
-          <code>
-            {this.props.activeResult.snippet}
-          </code>
-        </pre>
-
+          <h1>{ this.props.activeResult.title }</h1>
+          <pre>
+            <code>
+              {this.props.activeResult.snippet}
+            </code>
+          </pre>
         </div>
-        /*
-         /// <div className="code-snippet">
-        //   <h2> Code Snippet </h2>
-        //   <form onSubmit={ this.handleSubmit } id="form-add-snippet" className="form-add-snippet">
-
-        //     <div className="row">
-        //       <input
-        //         onChange={ (evt) => { this.setState({ codeSnippetTitle: evt.target.value}); } }
-        //         value={ this.state.codeSnippetTitle }
-        //         placeholder='Enter a title' />
-        //     </div>
-
-        //     <div className="row">
-        //       <textarea
-        //         onChange={ (evt) => { this.setState({ codeSnippetText: evt.target.value}); } }
-        //         value={ this.state.codeSnippetText }
-        //         rows="10"
-        //         cols="50"
-        //         placeholder="insert Code Scratch here">
-        //       </textarea>
-        //     </div>
-
-        //     <div className="row">
-        //       <textarea
-        //         onChange={ (evt) => { this.setState({ codeSnippetTags: evt.target.value}); } }
-        //         value={ this.state.codeSnippetTags }
-        //         rows="4"
-        //         cols="50"
-        //         placeholder="Enter search tags">
-        //       </textarea>
-        //     </div>
-
-        //     <div className="row">
-        //       <button>SAVE YOUR CODE SCRATCH</button>
-        //     </div>
-
-        //   </form>
-        // </div>
-      */
+        <div className="code-snippet">
+             <form onSubmit={ this.handleClose } id="form-closeview" className="form-closeview">
+              <div className="row">
+                <button>Close</button>
+              </div>
+            </form>
+        </div>
+    </div>
     );
   }
 }
