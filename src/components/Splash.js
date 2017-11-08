@@ -8,7 +8,7 @@ class Splash extends Component {
     // as props. Note that functions are passed using `bind` to
     // make sure we keep our scope to App
     return (
-      <div>
+      <div className='login-button'>
         <LoginButton />
       </div>
     )
