@@ -30,22 +30,19 @@ class Results extends Component {
       //set state to that userResultList
 
 
-      const userResults = React.createClass({
-        render: function(){
-          return<ul>{this.createItems(this.props.items)}</ul>;
-        },
-        createItems: function(items){
-          var output = [];
-          for(var i = 0; i < items.length; i++){
-            if (items.user.id === this.state.currentUser.uid){
-             output.push(<li>{items[i]}</li>);
-            }
-          }
-        }
-      });
+      // const userResults =
+      //     var output = [];
+      //     for(var i = 0; i < items.length; i++){
+      //       if (items.user.id === this.state.currentUser.uid){
+      //        output.push(<li>{items[i]}</li>);
+      //       }
+      //     }
+      //     return output;
+      //   }
+      // });
 
       this.setState({
-        results: resultsList,
+        results: userId,
       });
     });
   }
@@ -62,7 +59,7 @@ class Results extends Component {
 
 
         { this.state.results.map(result => (
-          <Result key={ result.id } data={ result } />
+          if (result.user.uid === this.state.currentUser.uid) <Result key={ result.id } data={ result } />
         )) }
 
         <h4> Hi I am the end of results</h4>
