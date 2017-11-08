@@ -41,7 +41,7 @@ git commit -m "my comments here"
 
 #### Step 4: push to your branch on github
 ```
-git push origin dev-jesse
+git push origin dev-myname
 ```
 
 #### Step 5: go to github and fix merge conflicts

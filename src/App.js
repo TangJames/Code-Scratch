@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import logo_cat from './logo_cat.png';
 import Splash from './components/Splash.js';
 import HomePage from './components/HomePage.js';
 import Search from './components/Search.js';
@@ -10,7 +11,9 @@ import {
   Route,
   Link,
   Switch,
-  NavLink
+  NavLink,
+  Redirect,
+  withRouter
 } from 'react-router-dom';
 
 import { auth } from './utils/firebase';
@@ -36,17 +39,27 @@ class App extends Component {
   }
 
   render() {
+    let appActiveContent;
+    if (!this.state.currentUser){
+      console.log(this.state.currentUser);
+      appActiveContent = <Splash currentUser={ this.state.currentUser } />
+    } else if (this.state.currentUser){
+      console.log(this.state.currentUser);
+      appActiveContent =
+        <div>
+          <HomePage currentUser={ this.state.currentUser } />
+        </div>
+    } else {
+      appActiveContent =
+        <div>
+          <h1> Unexplained error!!! (psst, it was aliens...)</h1>
+        </div>
+    }
+
     return (
       <div className="App">
-        <Router>
-          <div>
-            <Switch>
-              <Route exact path="/" component={Splash} currentUser={ this.state.currentUser } />
-              <Route path="/homepage" component={HomePage} />
-              <Route path="/banner" component={Header} />
-            </Switch>
-          </div>
-        </Router>
+        <Header />
+        {appActiveContent}
       </div>
     );
   }

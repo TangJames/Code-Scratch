@@ -1,5 +1,28 @@
-.App {
-  text-align: center; }
+  .App {
+    text-align: center;
+    }
+
+  .login-button {
+    z-index: 0;
+  }
+
+  .banner img {
+    height: 100px;
+     }
+
+  h1 {
+    display: inline;
+    font-size: 45px;
+    color: ##757575;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: normal;
+  }
+
+ .navbar-profile-pic {
+  width: 200px;
+  height: auto;
+  margin-top: 162px;
+ }
 
 body {
   padding: 0;
@@ -7,29 +30,18 @@ body {
 
 html {
   height: 100vh;
-  width: 100%; }
+  width: 100%;
+  background-image: url(https://i.redd.it/ygzg317syilx.png);
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: center center;
+}
 
 .banner {
-  background-color: #2D1B2D;
-  height: 200px;
-  width: 100%; }
-
-.cat-logo {
-  height: 200px;
-  width: 100%; }
-
-.cat-logo:hover .cat {
-  top: 30px; }
-
-.cat {
-  position: relative;
-  top: 60px;
-  left: 100px;
-  background: #EEEEEE;
-  height: 60px;
-  width: 60px;
-  z-index: 0;
-  -webkit-transition: all linear 1s; }
+  height: 61px;
+  width: 100%;
+  display: flex;
+   }
 
 .cat:before, .cat:after {
   width: 0;
