@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { database } from '../utils/firebase';
 
+
 class CodeSnippet extends Component {
   constructor(props) {
     super(props);
@@ -19,6 +20,11 @@ class CodeSnippet extends Component {
 
   componentWillMount() {
     this.ref = database.ref('/snippets');
+  }
+
+  componentDidMount() {
+    //can we recognize keyboard events happening?
+    //
   }
 
   componentWillUnmount() {
@@ -57,8 +63,14 @@ class CodeSnippet extends Component {
   }
 
 
+
+
   render() {
+
+
+
     let _handleSubmitRender;
+
     return (
         <div className="code-snippet">
           <h2> Code Snippet </h2>
