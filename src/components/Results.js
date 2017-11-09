@@ -22,12 +22,6 @@ class Results extends Component {
     this.ref.on('value', data => {
       const resultsList = firebaseListToArray(data.val());
 
-      //loop through results list
-      //make a new object that is all resultList[this].user.uid === currentUser.uid
-      //set state to that userResultList
-
-      let userResults; //TODO: James to filter down to User Results only
-
       this.setState({
         results: resultsList,
       });
@@ -73,20 +67,25 @@ class Results extends Component {
         <h4>Hi I am the start of results </h4>
 
 
-        { this.state.results.map(result => (
+        { this.state.results.map(result => {
           <Result
             key={ result.id }
             data={ result }
             getResultsFromResult={ this.getResultsFromResult }
             />
-        )) }
+        })
+      }
 
-
-        { this.state.results.map(result => {
-          if (result.user.uid === this.state.currentUser.uid)
-          return  <Result key={ result.id } data={ result } />
-            return ''
-        }) }
+        { this.state.results
+            .filter(result => result.user.uid === this.state.currentUser.uid)
+            .map(result => (
+              <Result
+                key={ result.id }
+                data={ result }
+                getResultsFromResult={ this.getResultsFromResult }
+              />
+            ))
+        }
 
 
         <h4> Hi I am the end of results</h4>
