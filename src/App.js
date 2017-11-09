@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import logo_cat from './logo_cat.png';
 import Splash from './components/Splash.js';
 import HomePage from './components/HomePage.js';
-import Search from './components/Search.js';
 import CodeSnippet from './components/CodeSnippet.js';
 import Header from './components/Header.js';
 import Footer from './components/Footer.js';
