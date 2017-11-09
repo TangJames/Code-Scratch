@@ -54,7 +54,7 @@ class Results extends Component {
     let renderViewThis;
     let userFilter;
 
-      console.log("Results.js: i think keyword is: " + this.props.keyword);
+    console.log("Results.js: i think keyword is: " + this.props.keyword);
     if(this.state.activeResult != null){
       this.sendResultsToHomePage(this.state.activeResult);
       this.setState({
