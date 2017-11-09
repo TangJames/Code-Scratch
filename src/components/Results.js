@@ -40,8 +40,6 @@ class Results extends Component {
     this.props.renderViewThis(thisResult);
   }
 
-
-
   getResultsFromResult(item){
     let myResult = item;
     this.setState({
