@@ -51,7 +51,7 @@ class ViewCodeSnippet extends Component {
             { this.props.activeResult.tags }
           </div>
         </div>
-        <div className="code-snippet">
+        <div className="submit-form">
              <form onSubmit={ this.handleClose } id="form-closeview" className="form-closeview">
               <div className="row">
                 <button>Close</button>
