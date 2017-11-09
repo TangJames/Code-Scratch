@@ -5,9 +5,10 @@ import { database, firebaseListToArray } from '../utils/firebase';
 class Results extends Component {
   constructor(props) {
     super(props);
-
+    let bacon = this.props.keyword;
     this.state = {
       currentUser: this.props.currentUser,
+      meow: this.props.keyword,
       results: [],
       activeResult: null,
     };
@@ -32,6 +33,7 @@ class Results extends Component {
     this.ref.off(); // TODO: this doesnt work
   }
 
+  //VIEW CODESNIPPET Fn - sends clicked result to homepage to load ViewCodeSnippet
   sendResultsToHomePage(resultData) {
     // TODO handle an event that sends an object from
     // this components state to homepage
@@ -40,8 +42,8 @@ class Results extends Component {
     this.props.renderViewThis(thisResult);
   }
 
-
-
+  //VIEW CODESNIPPET fn - gets the clicked result in result.js to results state to send to HomePage
+  // in order to load ViewCodeSnippet.js with that clicked result
   getResultsFromResult(item){
     let myResult = item;
     this.setState({
@@ -49,47 +51,52 @@ class Results extends Component {
     });
     console.log("I RECEIVED DATA! " + JSON.stringify(this.state.activeResult));
   }
-  //TODO what action on this page fires off _ResultsToHomePage
-    //add if statement that gets state
+
 
   render() {
     let renderViewThis;
+    let userFilter;
+
+      console.log("Results.js: i think keyword is: " + this.props.keyword);
     if(this.state.activeResult != null){
-      console.log("I AM IF STATEMENT in RESULTS");
       this.sendResultsToHomePage(this.state.activeResult);
       this.setState({
         activeResult: null,
       });
     }
 
+    if(this.props.keyword !== null){
+      userFilter = this.state.results
+                    .filter(result => result.user.uid === this.state.currentUser.uid)
+                    .filter( result => result.title.indexOf(this.props.keyword)!== -1 || result.tags.indexOf(this.props.keyword)!== -1 || result.snippet.indexOf(this.props.keyword)!== -1  )
+                    .map(result => (
+                      <Result
+                        key={ result.id }
+                        data={ result }
+                        getResultsFromResult={ this.getResultsFromResult }
+                      />
+                    ));
+    } else if (this.props.keyword == null || this.props.keyword == undefined) {
+     userFilter = this.state.results
+                    .filter(result => result.user.uid === this.state.currentUser.uid)
+                    .map(result => (
+                      <Result
+                        key={ result.id }
+                        data={ result }
+                        getResultsFromResult={ this.getResultsFromResult }
+                      />
+                    ));
+    }
+
+
     return (
+      <div>
       <section className="col-md-8 col-sm-12 results">
-        <h4>Hi I am the start of results </h4>
 
+           { userFilter }
 
-        { this.state.results.map(result => {
-          <Result
-            key={ result.id }
-            data={ result }
-            getResultsFromResult={ this.getResultsFromResult }
-            />
-        })
-      }
-
-        { this.state.results
-            .filter(result => result.user.uid === this.state.currentUser.uid)
-            .map(result => (
-              <Result
-                key={ result.id }
-                data={ result }
-                getResultsFromResult={ this.getResultsFromResult }
-              />
-            ))
-        }
-
-
-        <h4> Hi I am the end of results</h4>
       </section>
+      </div>
     );
   }
 }

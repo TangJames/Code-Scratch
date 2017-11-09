@@ -259,4 +259,23 @@ body {
   color: #fff;
   letter-spacing: 5px; }
 
+pre {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  text-shadow: 0px 0px 0px black;
+  font-size: 24px; }
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px;
+  flex-direction: row;
+  width: 20%;
+  margin: 0px auto;
+  text-shadow: 0px 0px 0px black; }
+
+h4, h2, div {
+  text-shadow: 0px 0px 0px black; }
+
 /*# sourceMappingURL=index.css.map */
