@@ -32,21 +32,24 @@ class ViewCodeSnippet extends Component {
     this._handleSubmitRender();
   };
 
-
-
-
-
   render() {
     let _handleSubmitRender;
     return (
       <div>
         <div>
           <h1>{ this.props.activeResult.title }</h1>
+
+          <h2> Code: </h2>
           <pre>
             <code>
               {this.props.activeResult.snippet}
             </code>
           </pre>
+
+          <h2> Tags: </h2>
+          <div>
+            { this.props.activeResult.tags }
+          </div>
         </div>
         <div className="code-snippet">
              <form onSubmit={ this.handleClose } id="form-closeview" className="form-closeview">
