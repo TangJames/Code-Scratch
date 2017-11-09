@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Search from './Search.js';
 import Results from './Results.js';
 import CodeSnippet from './CodeSnippet.js';
 import LogoutButton from './LogoutButton.js';
@@ -21,9 +20,12 @@ class HomePage extends Component {
       currentUser: this.props.currentUser,
       activeComponent: 'search',
       activeResult: null,
+      activeSearchTerm: null,
     }
     this.renderViewThis = this.renderViewThis.bind(this);
+    this.updateSearchTerm = this.updateSearchTerm.bind(this);
     this.renderNewSubmit = this.renderNewSubmit.bind(this);
+    this.doSearchResults = this.doSearchResults.bind(this);
     this.handleNewSnippetClick = this.handleNewSnippetClick.bind(this);
   }
 
@@ -37,7 +39,7 @@ class HomePage extends Component {
 
   //loads the ViewCodeSnippet.js component with the clicked item
   renderViewThis(data) {
-    console.log("i am renderViewThis in HomePage.js" + JSON.stringify(data));
+    // console.log("i am renderViewThis in HomePage.js" + JSON.stringify(data));
     this.setState({
       activeComponent: 'viewThis',
       activeResult: data,
@@ -51,6 +53,23 @@ class HomePage extends Component {
     this.setState({ activeComponent: 'newSnippet' });
   };
 
+  doSearchResults(searchTerm){
+    console.log("hi i will search results for ya");
+  }
+
+
+  updateSearchTerm(evt) {
+    evt.preventDefault();
+    let formsSearchTerm = document.getElementById('searchTerm').value;
+
+     this.setState({
+      activeSearchTerm: formsSearchTerm,
+     });
+
+    console.log('HomePage.js: updateSearchTerm: this.state.searchTerm: ' + this.state.activeSearchTerm + ' formssearchterm= ' + formsSearchTerm);
+    this.doSearchResults(this.state.activeSearchTerm);
+  }
+
 
   render() {
     let activeHomeContent;
@@ -58,7 +77,18 @@ class HomePage extends Component {
     if (this.state.activeComponent == 'search'){
       activeHomeContent =
         <div>
-          <Search currentUser={ this.state.currentUser } />
+
+        <div className="Search">
+          <form name="searchBox" onSubmit={ this.updateSearchTerm }>
+            <input
+              id="searchTerm"
+              name="searchTerm"
+              placeholder="Search Your Code Snippets"
+              onChange={ (evt) => { this.setState({ activeSearchTerm: evt.target.value }); } }
+            />
+            <button type="submit">Search</button>
+          </form>
+        </div>
           <Results
             currentUser={ this.state.currentUser }
             renderViewThis={ this.renderViewThis } />
@@ -87,7 +117,7 @@ class HomePage extends Component {
     return (
       <div className="HomePage">
         <div>
-          <h1>{this.props.currentUser.displayName}</h1>
+          <h1 className="username">Hi, {this.props.currentUser.displayName}</h1>
           <img className="navbar-profile-pic" src={this.props.currentUser.photoURL} alt="" />
           <LogoutButton />
 
