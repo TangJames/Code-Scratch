@@ -26,7 +26,7 @@ class Result extends Component {
               <form onSubmit={ this.sendThisToResults } id="form-result-snippet" className="form-result-snippet">
                 <button>View</button>
               </form>
-          </div>
+            </div>
     ;
   }
 }

@@ -16,6 +16,7 @@ import {
 class HomePage extends Component {
   constructor(props){
     super(props);
+    // let filterTerm = document.getElementById('searchTerm').value;
     this.state = {
       currentUser: this.props.currentUser,
       activeComponent: 'search',
@@ -54,19 +55,17 @@ class HomePage extends Component {
   };
 
   doSearchResults(searchTerm){
-    console.log("hi i will search results for ya");
+    console.log('homepage.js: i think activeSearchTerm state is: ' + this.state.activeSearchTerm);
+    console.log('homepage.js: i am searchTerm in doSearchResults(searchTerm)' + searchTerm);
   }
 
 
   updateSearchTerm(evt) {
     evt.preventDefault();
     let formsSearchTerm = document.getElementById('searchTerm').value;
-
-     this.setState({
+    this.setState({
       activeSearchTerm: formsSearchTerm,
      });
-
-    console.log('HomePage.js: updateSearchTerm: this.state.searchTerm: ' + this.state.activeSearchTerm + ' formssearchterm= ' + formsSearchTerm);
     this.doSearchResults(this.state.activeSearchTerm);
   }
 
@@ -77,24 +76,31 @@ class HomePage extends Component {
     if (this.state.activeComponent == 'search'){
       activeHomeContent =
         <div>
-
         <div className="Search">
           <form name="searchBox" onSubmit={ this.updateSearchTerm }>
             <input
               id="searchTerm"
               name="searchTerm"
               placeholder="Search Your Code Snippets"
-              onChange={ (evt) => { this.setState({ activeSearchTerm: evt.target.value }); } }
+              onChange={ (evt) => {
+                 this.setState({ activeSearchTerm: evt.target.value });
+                  } }
             />
             <button type="submit">Search</button>
           </form>
         </div>
-          <Results
-            currentUser={ this.state.currentUser }
-            renderViewThis={ this.renderViewThis } />
+        <div className="NewSnippet">
           <button onClick={ this.handleNewSnippetClick } className="btn-snippet btn btn-primary">
             {  'Add New Code Snippet' }
           </button>
+        </div>
+
+          <Results
+            currentUser={ this.state.currentUser }
+            renderViewThis={ this.renderViewThis }
+            keyword={ this.state.activeSearchTerm } />
+
+
         </div>
 
     } else if (this.state.activeComponent == 'newSnippet' ){
