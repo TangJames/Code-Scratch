@@ -30,11 +30,16 @@ class Splash extends Component {
             <div className="cloud"></div>
           </div>
 
+          <div className="description">
+            <p>Capture, Organize and Search your private vault of code. Here!</p>
+          </div>
+          <div className="description2">
+            <p>Need a safe place for all your code snippets?</p>
+          </div>
+
         </div>
 
-        <div className="description">
-          <p>Capture, Organize and Search your private vault of code.</p>
-        </div>
+
       </div>
     )
   }

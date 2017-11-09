@@ -3,11 +3,14 @@
 $bg-banner: #2D1B2D;
 $font-color: #FFF;
 
-// * {
-//   border: 1px solid red;
-// }
+* {
+  border: 1px solid red;
+}
 
 .banner {
+  // position: fixed;
+  // top: 0;
+  // width: 100%;
   background-color: $bg-banner;
   color: $font-color;
   display: flex;
@@ -39,8 +42,8 @@ h1 {
 .username {
   font-family: 'Open Sans', sans-serif;
   position: absolute;
-  top: 1%;
-  right: 5%;
+  top: 8%;
+  right: 22%;
   color: #fff;
   font-size: .8em;
 }

@@ -57,7 +57,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Header />
+        <Header currentUser={ this.state.currentUser }/>
         {appActiveContent}
         <Footer />
       </div>

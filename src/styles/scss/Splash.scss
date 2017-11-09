@@ -8,14 +8,13 @@ body {
 
 .wrapper {
   background-color: #131219;
-  
-  width: auto;
-  top:  103px;
+  position: relative;
+  min-height: 500px;
+  width: 100%;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  position: absolute;
-
 }
 
 
@@ -23,8 +22,8 @@ body {
   position: absolute;
   background:#EEEEEE;
   height: 60px;
-  top: 30%;
-  left: 47%;
+  top: 50%;
+  left: 50%;
   width: 60px;
   z-index: 0;
   -webkit-transition: all linear 1s;
@@ -75,13 +74,14 @@ body {
 
 .wrapper:hover .cat{
 
-  top: 24%;
+  top: 43%;
 }
 
 .moon {
+  // display: none;
   position: absolute;
-  top: 30%;
-  left: 44.5%;
+  top: 50%;
+  left: 48%;
   height: 120px;
   width: 120px;
   background: #666666;
@@ -147,10 +147,11 @@ body {
 
 .description {
   position: absolute;
-  bottom: 220px;
-  left: 50px;
+  bottom: 30%;
+  left: 5%;
   font-family: 'Open Sans', sans-serif;
-  font-size: 1.6em;
+  font-size: 1.4em;
+  text-align: left;
   height: auto;
   width: 400px;
   // background-color: rgba(100, 83, 107, .3);
@@ -159,16 +160,22 @@ body {
   background: repeating-linear-gradient(
   -55deg,
   rgba(45, 27, 45, .9),
-  rgba(45, 27, 45, .9) 10px,
-  rgba(100, 83, 107, .3) 10px,
-  rgba(100, 83, 107, .3) 20px
+  rgba(45, 27, 45, .9) 4px,
+  rgba(100, 83, 107, .3) 4px,
+  rgba(100, 83, 107, .3) 8px
   );
   border: 3px solid #000;
+  p {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    letter-spacing: 5px;
+  }
 }
 
-.description p {
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  letter-spacing: 5px;
+.description2 {
+  @extend .description;
+  bottom: 70%;
+  left: 60%;
+
 }

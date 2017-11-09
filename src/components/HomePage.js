@@ -89,8 +89,6 @@ class HomePage extends Component {
     return (
       <div className="HomePage">
         <div>
-          <h1 className="username">Hi, {this.props.currentUser.displayName}</h1>
-          <img className="navbar-profile-pic" src={this.props.currentUser.photoURL} alt="" />
           <LogoutButton />
         </div>
         <div className="HomeContent">
