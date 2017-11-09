@@ -11,12 +11,71 @@ pre {
   justify-content: space-between;
   padding: 10px 10px;
   flex-direction: row;
-  width: 20%;
+  min-width:300px;
+  width: 30%;
   margin: 0px auto;
+  text-align: right;
+  text-shadow: 0px 0px 0px black;
+  border-bottom:1px #ccc dotted;
+  text-transform:uppercase;
+}
+
+h4, h2 {
   text-shadow: 0px 0px 0px black;
 }
 
-h4, h2, div {
+div {
   text-shadow: 0px 0px 0px black;
 }
 
+.banner-foot {
+  position: fixed;
+}
+#searchTerm{
+  margin:15px;
+  padding:5px;
+  width:200px;
+  height:auto;
+  text-align:center;
+  font-size: 14px;
+
+}
+
+.btn-search,.btn-result {
+  width: 75px;
+  padding:5px;
+  font-size:14px;
+  text-align:center;
+  box-shadow: 1px 1px 2px #333;
+}
+
+.btn-new {
+  width: 200px;
+  height:40px;
+  padding:5px;
+  font-size:14px;
+  text-align:center;
+  box-shadow: 1px 1px 2px #333;
+}
+
+.results {
+  overflow-y: scroll;
+  max-height:500px;
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+
+.resultTitle {
+  font-size:16px;
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+.NewSnippet {
+
+}
+
+.sub-header {
+  padding-bottom:15px;
+  box-shadow:1px 1px 10px rgba(0,0,0,0.4);
+}
