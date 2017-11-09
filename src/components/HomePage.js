@@ -81,9 +81,7 @@ class HomePage extends Component {
         renderNewSubmit={ this.renderNewSubmit } />
     }
 
-
-
-     else {
+    else {
       activeHomeContent = <h1> Unexplained error!!! (psst, it was aliens...)</h1>
     }
     return (
@@ -92,6 +90,7 @@ class HomePage extends Component {
           <h1>{this.props.currentUser.displayName}</h1>
           <img className="navbar-profile-pic" src={this.props.currentUser.photoURL} alt="" />
           <LogoutButton />
+
         </div>
         <div className="HomeContent">
           {activeHomeContent}
