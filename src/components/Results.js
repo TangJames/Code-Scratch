@@ -35,9 +35,6 @@ class Results extends Component {
 
   //VIEW CODESNIPPET Fn - sends clicked result to homepage to load ViewCodeSnippet
   sendResultsToHomePage(resultData) {
-    // TODO handle an event that sends an object from
-    // this components state to homepage
-    //send that stuff back to this component parent(HomePage)
     let thisResult = resultData;
     this.props.renderViewThis(thisResult);
   }
