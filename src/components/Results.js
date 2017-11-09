@@ -62,34 +62,26 @@ class Results extends Component {
       });
     }
 
+    let userFilter = this.state.results
+                      .filter(result => result.user.uid === this.state.currentUser.uid)
+                      .map(result => (
+                        <Result
+                          key={ result.id }
+                          data={ result }
+                          getResultsFromResult={ this.getResultsFromResult }
+                        />
+                      ));
+
     return (
+      <div>
       <section className="col-md-8 col-sm-12 results">
         <h4>Hi I am the start of results </h4>
 
-
-        { this.state.results.map(result => {
-          <Result
-            key={ result.id }
-            data={ result }
-            getResultsFromResult={ this.getResultsFromResult }
-            />
-        })
-      }
-
-        { this.state.results
-            .filter(result => result.user.uid === this.state.currentUser.uid)
-            .map(result => (
-              <Result
-                key={ result.id }
-                data={ result }
-                getResultsFromResult={ this.getResultsFromResult }
-              />
-            ))
-        }
-
+          { userFilter }
 
         <h4> Hi I am the end of results</h4>
       </section>
+      </div>
     );
   }
 }
