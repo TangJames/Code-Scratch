@@ -22,10 +22,11 @@ class Result extends Component {
     console.log(this.props.data);
     let getResultsFromResult;
     return <div className="row">
-             {this.props.data.title}
-              <form onSubmit={ this.sendThisToResults } id="form-result-snippet" className="form-result-snippet">
-                <button>View</button>
-              </form>
+
+                <div className="resultTitle">{this.props.data.title}</div>
+                  <form onSubmit={ this.sendThisToResults } id="form-result-snippet" className="form-result-snippet">
+                    <button className="btn-result">View</button>
+                  </form>
             </div>
     ;
   }
