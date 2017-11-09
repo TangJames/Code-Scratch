@@ -68,7 +68,7 @@ class Results extends Component {
     if(this.props.keyword !== null){
       userFilter = this.state.results
                     .filter(result => result.user.uid === this.state.currentUser.uid)
-                    .filter( result => result.tags.indexOf(this.props.keyword)!== -1 )
+                    .filter( result => result.title.indexOf(this.props.keyword)!== -1 || result.tags.indexOf(this.props.keyword)!== -1 || result.snippet.indexOf(this.props.keyword)!== -1  )
                     .map(result => (
                       <Result
                         key={ result.id }
