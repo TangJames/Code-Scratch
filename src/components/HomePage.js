@@ -76,23 +76,25 @@ class HomePage extends Component {
     if (this.state.activeComponent == 'search'){
       activeHomeContent =
         <div>
-        <div className="Search">
-          <form name="searchBox" onSubmit={ this.updateSearchTerm }>
-            <input
-              id="searchTerm"
-              name="searchTerm"
-              placeholder="Search Your Code Snippets"
-              onChange={ (evt) => {
-                 this.setState({ activeSearchTerm: evt.target.value });
-                  } }
-            />
-            <button type="submit">Search</button>
-          </form>
-        </div>
-        <div className="NewSnippet">
-          <button onClick={ this.handleNewSnippetClick } className="btn-snippet btn btn-primary">
-            {  'Add New Code Snippet' }
-          </button>
+          <div className="sub-header">
+          <div className="Search">
+            <form name="searchBox" onSubmit={ this.updateSearchTerm }>
+              <input
+                id="searchTerm"
+                name="searchTerm"
+                placeholder="Search Your Code Snippets"
+                onChange={ (evt) => {
+                   this.setState({ activeSearchTerm: evt.target.value });
+                    } }
+              />
+              <button className="btn-search" type="submit">Search</button>
+            </form>
+          </div>
+          <div className="NewSnippet">
+            <button onClick={ this.handleNewSnippetClick } className="btn-new">
+              {  'Add New Code Snippet' }
+            </button>
+          </div>
         </div>
 
           <Results
