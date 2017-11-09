@@ -35,9 +35,6 @@ class Results extends Component {
 
   //VIEW CODESNIPPET Fn - sends clicked result to homepage to load ViewCodeSnippet
   sendResultsToHomePage(resultData) {
-    // TODO handle an event that sends an object from
-    // this components state to homepage
-    //send that stuff back to this component parent(HomePage)
     let thisResult = resultData;
     this.props.renderViewThis(thisResult);
   }
@@ -57,7 +54,7 @@ class Results extends Component {
     let renderViewThis;
     let userFilter;
 
-      console.log("Results.js: i think keyword is: " + this.props.keyword);
+    console.log("Results.js: i think keyword is: " + this.props.keyword);
     if(this.state.activeResult != null){
       this.sendResultsToHomePage(this.state.activeResult);
       this.setState({
