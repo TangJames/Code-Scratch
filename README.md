@@ -24,9 +24,9 @@
 ## Key Features
 
 * GITHUB Login
-* 
-* 
-* 
+* Have your code anywhere you go!
+* Easy access
+* Simplistic design
 
 ## Required dependencies
 
